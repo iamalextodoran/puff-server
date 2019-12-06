@@ -7,7 +7,7 @@ class CreateTransactions < ActiveRecord::Migration[6.0]
       t.string :description
       t.float :amount
       t.datetime :date
-      t.string :type
+      t.string :type_of_t
 
       t.timestamps
     end

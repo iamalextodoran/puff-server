@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
+
   def index
-    user = User.order(:full_name)
-    render json: user
+    render json: User.all
   end
   
   def show
@@ -10,19 +10,19 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.new(get_params)
-    user.save
+    user = User.create(user_params)
     render json: user
   end
 
   def destroy
     user = User.find(params[:id])
-    User.destroy
+    user.destroy
     render json: user
   end
 
-  private 
-  def get_params
-    api_params(:full_name :picture)
+  private
+
+  def user_params
+    api_params(:full_name, :picture)
   end
 end

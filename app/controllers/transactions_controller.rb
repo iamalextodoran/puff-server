@@ -1,7 +1,7 @@
 class TransactionsController < ApplicationController
   def index
-    trans = Transaction.all
-    render json: trans
+    render json: Transaction.all
+
   end
 
   def show
@@ -10,7 +10,7 @@ class TransactionsController < ApplicationController
   end
 
   def create
-    trans = Transaction.new(get_params)
+    trans = Transaction.create(get_params)
     render json: trans
   end
 
@@ -28,6 +28,6 @@ class TransactionsController < ApplicationController
 
   private 
   def get_params
-    api_params(:name :description :amount :type :category :date)
+    json_api_params(:name, :description, :amount, :type_of_t, :category, :date)
   end
 end
