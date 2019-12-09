@@ -1,7 +1,6 @@
 class TransactionsController < ApplicationController
   def index
     render json: Transaction.all
-
   end
 
   def show
@@ -10,13 +9,13 @@ class TransactionsController < ApplicationController
   end
 
   def create
-    trans = Transaction.create(get_params)
+    trans = Transaction.create!(transaction_params.merge(user_id: 14))
     render json: trans
   end
 
   def update
     trans = Transaction.find(params[:id])
-    trans.update(get_params)
+    trans.update(transaction_params)
     render json: trans
   end
 
@@ -26,8 +25,17 @@ class TransactionsController < ApplicationController
     render json: trans
   end
 
-  private 
-  def get_params
-    json_api_params(:name, :description, :amount, :type_of_t, :category, :date)
+  def only_income
+    render json: Transaction.as_income
+  end
+
+  def only_expense
+    render json: Transaction.as_expense
+  end
+
+  private
+
+  def transaction_params
+    api_params(:name, :description, :amount, :type_of_t, :category, :date)
   end
 end
