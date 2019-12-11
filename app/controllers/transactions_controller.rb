@@ -9,7 +9,7 @@ class TransactionsController < ApplicationController
   end
 
   def create
-    trans = Transaction.create!(transaction_params.merge(user_id: 30))
+    trans = Transaction.create!(transaction_params.merge(user_id: 42))
     render json: trans
   end
 
