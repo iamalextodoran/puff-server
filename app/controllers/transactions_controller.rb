@@ -1,4 +1,6 @@
 class TransactionsController < ApplicationController
+  # has_scope :by_type,
+
   def index
     render json: Transaction.all
   end
@@ -23,14 +25,6 @@ class TransactionsController < ApplicationController
     trans = Transaction.find(params[:id])
     trans.destroy
     render json: trans
-  end
-
-  def only_income
-    render json: Transaction.as_income
-  end
-
-  def only_expense
-    render json: Transaction.as_expense
   end
 
   private

@@ -1,5 +1,4 @@
 class Transaction < ApplicationRecord
   belongs_to :user
-  scope :as_income, -> { where("type_of_t = income") }
-  scope :as_expense, -> { where("type_of_t = expense") }
+  scope :by_type, -> (type_of_t) { where("type_of_t = ?", type_of_t) }
 end
