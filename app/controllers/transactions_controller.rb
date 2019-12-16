@@ -30,6 +30,6 @@ class TransactionsController < ApplicationController
   private
 
   def transaction_params
-    api_params(:name, :description, :amount, :type_of_t, :category, :date)
+    api_parameters(:name, :description, :amount, :type_of_t, :category, :date)
   end
 end

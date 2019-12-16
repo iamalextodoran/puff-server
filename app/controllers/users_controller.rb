@@ -23,6 +23,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    api_params(:full_name, :picture)
+    api_parameters(:full_name, :picture, :dark_mode)
   end
 end
