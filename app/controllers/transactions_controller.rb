@@ -26,6 +26,12 @@ class TransactionsController < ApplicationController
     trans.destroy
     render json: trans
   end
+  
+  # def current_month_trans
+  #   transactions = Transaction.where(date <= D)
+  #   transactions.save
+  #   render json: transactions
+  # end
 
   private
 
