@@ -12,6 +12,7 @@ class TransactionsController < ApplicationController
 
   def create
     trans = Transaction.create!(transaction_params.merge(user_id: 42))
+    # sterg merge
     render json: trans
   end
 
@@ -27,15 +28,10 @@ class TransactionsController < ApplicationController
     render json: trans
   end
   
-  # def current_month_trans
-  #   transactions = Transaction.where(date <= D)
-  #   transactions.save
-  #   render json: transactions
-  # end
-
   private
 
   def transaction_params
     api_parameters(:name, :description, :amount, :type_of_t, :category, :date)
+    #adaug :user_id
   end
 end

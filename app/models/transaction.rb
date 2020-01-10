@@ -1,4 +1,6 @@
 class Transaction < ApplicationRecord
   belongs_to :user
-  # scope :by_type, -> (type_of_t) { where("type_of_t = ?", type_of_t) }
+  validates :name, presence: true
+  validates :amount, presence: true
+  validates :category, presence: true
 end
