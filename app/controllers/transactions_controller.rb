@@ -31,6 +31,5 @@ class TransactionsController < ApplicationController
 
   def transaction_params
     api_parameters(:name, :description, :amount, :user_id, :type_of_t, :category, :date)
-    #adaug :user_id
   end
 end
