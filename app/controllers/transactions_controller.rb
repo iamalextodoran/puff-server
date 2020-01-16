@@ -26,6 +26,11 @@ class TransactionsController < ApplicationController
     trans.destroy
     render json: trans
   end
+
+  def check
+    render json: Transaction.last
+  end
+  
   
   private
 

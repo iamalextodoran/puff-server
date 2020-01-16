@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_13_115458) do
+ActiveRecord::Schema.define(version: 2020_01_16_135201) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2020_01_13_115458) do
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "dark_mode"
     t.datetime "selected_at", precision: 6
+    t.integer "danger", default: 1000, null: false
   end
 
 end
