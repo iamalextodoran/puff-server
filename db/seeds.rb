@@ -6,17 +6,21 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-u1 = User.create(full_name: "Alex Todoran", picture: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&s=74daec1914d1d105202bca8a310a6a71");
-u2 = User.create(full_name: "Munte Vlad", picture: "https://images-na.ssl-images-amazon.com/images/M/MV5BNTk2OGU4NzktODhhOC00Nzc2LWIyNzYtOWViMjljZGFiNTMxXkEyXkFqcGdeQXVyMTE1NTQwOTk@._V1_UY256_CR12,0,172,256_AL_.jpg");
-u3 = User.create(full_name: "David Bautista", picture: "https://pbs.twimg.com/profile_images/1000050491970260993/FJkauyEa.jpg");
-u4 = User.create(full_name: "Alex Todoran", picture: "https://tinyfac.es/data/avatars/AEF44435-B547-4B84-A2AE-887DFAEE6DDF-200w.jpeg");
+Transaction.create(category: "food", user_id: 45, name: "Milk", description: "no ndeed for that thing", amount: "1300", type_of_t: "expense");
+Transaction.create(category: "food", user_id: 45, name: "Cheese", description: "no ndeed for that thing", amount: "300", type_of_t: "expense");
+Transaction.create(category: "savings", user_id: 45, name: "Save some", description: "no ndeed for that thing", amount: "3020", type_of_t: "expense");
+Transaction.create(category: "savings", user_id: 45, name: "Hard times", description: "no ndeed for that thing", amount: "3600", type_of_t: "expense");
+Transaction.create(category: "travel", user_id: 45, name: "Greece", description: "no ndeed for that thing", amount: "1000", type_of_t: "expense");
+Transaction.create(category: "travel", user_id: 45, name: "France", description: "no ndeed for that thing", amount: "1000", type_of_t: "expense");
+Transaction.create(category: "transportation", user_id: 45, name: "Bus", description: "no ndeed for that thing", amount: "305", type_of_t: "expense");
+Transaction.create(category: "transportation", user_id: 45, name: "Gas", description: "no ndeed for that thing", amount: "700", type_of_t: "expense");
+Transaction.create(category: "utilities", user_id: 45, name: "Bills", description: "no ndeed for that thing", amount: "650", type_of_t: "expense");
+Transaction.create(category: "utilities", user_id: 45, name: "Mortgage", description: "no ndeed for that thing", amount: "3530", type_of_t: "expense");
+Transaction.create(category: "medical", user_id: 45, name: "Bandaje", description: "no ndeed for that thing", amount: "540", type_of_t: "expense");
+Transaction.create(category: "savings", user_id: 45, name: "dark days", description: "no ndeed for that thing", amount: "3220", type_of_t: "expense");
+Transaction.create(category: "medical", user_id: 45, name: "Surgery", description: "no ndeed for that thing", amount: "5800", type_of_t: "expense");
+Transaction.create(category: "savings", user_id: 45, name: "hard ones", description: "no ndeed for that thing", amount: "3220", type_of_t: "expense");
 
-a1 = Transaction.create(category: "food", user: u1, name: "lapte", description: "no ndeed for that thing", amount: "1300", type_of_t: "expense");
-a2 = Transaction.create(category: "food", user: u3, name: "oo", description: "no ndeed for that thing", amount: "300", type_of_t: "expense");
-a3 = Transaction.create(category: "savings", user: u3, name: "mere", description: "no ndeed for that thing", amount: "324", type_of_t: "expense");
-a4 = Transaction.create(category: "travel", user: u3, name: "bere", description: "no ndeed for that thing", amount: "100", type_of_t: "expense");
-a5 = Transaction.create(category: "transportation", user: u3, name: "apa", description: "no ndeed for that thing", amount: "20", type_of_t: "expense");
-a6 = Transaction.create(category: "utilities", user: u3, name: "suc", description: "no ndeed for that thing", amount: "30", type_of_t: "expense");
-a7 = Transaction.create(category: "medical", user: u3, name: "hawaii", description: "no ndeed for that thing", amount: "540", type_of_t: "income");
-a8 = Transaction.create(category: "savings", user: u3, name: "hawaii", description: "no ndeed for that thing", amount: "3220", type_of_t: "income");
-
+Transaction.create(category: "work", user_id: 45, name: "Wage", description: "no ndeed for that thing", amount: "12800", type_of_t: "income");
+Transaction.create(category: "freelance", user_id: 45, name: "Android app", description: "no ndeed for that thing", amount: "3800", type_of_t: "income");
+Transaction.create(category: "scolarship", user_id: 45, name: "Best performance", description: "no ndeed for that thing", amount: "1800", type_of_t: "income");
