@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :transactions do
-    get 'check', on: :collection
+    get 'all_expenses', on: :collection
   end
   resources :currentusers
   
