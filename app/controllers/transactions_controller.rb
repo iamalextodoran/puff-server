@@ -28,7 +28,8 @@ class TransactionsController < ApplicationController
   end
 
   def check
-    render json: Transaction.find(params[:id]).last
+    expenses  = Transaction.where(type_of_t: 'expense')
+    render json: {allExpenses: expenses }
   end
   
   
