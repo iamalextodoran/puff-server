@@ -28,7 +28,7 @@ class TransactionsController < ApplicationController
   end
 
   def check
-    render json: Transaction.last
+    render json: Transaction.find(params[:id]).last
   end
   
   
