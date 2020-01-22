@@ -41,7 +41,6 @@ class TransactionsController < ApplicationController
   def all_incomes
     incomes = Transaction.where(type_of_t: 'income').order(date: 'desc')
     this_month_incomes = incomes.where("date > ? AND date < ?", Time.now.beginning_of_month, Time.now.end_of_month) 
-
   end
 
   

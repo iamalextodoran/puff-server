@@ -26,10 +26,6 @@ class UsersController < ApplicationController
     render json: user
   end
 
-  def selected_user
-    render json: {boy: User.order(selected_at: 'desc').first}
-  end
-
   private
 
   def user_params
