@@ -4,7 +4,6 @@ class ApplicationController < ActionController::Base
   def api_parameters(*attrs)
     ActiveModelSerializers::Deserialization.jsonapi_parse(params, key_transform: :unaltered).slice(*attrs)
   end
-  ​
   def api_param(attr)
     api_parameters(attr)[attr]
   end

@@ -24,7 +24,10 @@ class UserSerializer < ActiveModel::Serializer
     savings.each do |expense|
       savings_total += expense.amount.to_f
     end
-    travel_percentage = travel_total/this_month_expenses_total
+
+    this_month_expenses_total=1 if this_month_expenses_total==0
+    
+    travel_percentage = travel_total/ this_month_expenses_total
     savings_percentage = savings_total/this_month_expenses_total
     return {
       total: this_month_expenses_total,
@@ -60,6 +63,8 @@ class UserSerializer < ActiveModel::Serializer
     scolarship.each do |income|
       scolarship_total += income.amount.to_f
     end
+
+    this_month_incomes_total=1 if this_month_incomes_total==0
 
     work_percentage = work_total/this_month_incomes_total
     freelance_percentage = freelance_total/this_month_incomes_total
