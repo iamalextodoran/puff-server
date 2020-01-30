@@ -29,6 +29,12 @@ class UserSerializer < ActiveModel::Serializer
     
     travel_percentage = travel_total/ this_month_expenses_total
     savings_percentage = savings_total/this_month_expenses_total
+    travel_percentage =0 if travel_percentage<0
+    travel_percentage =1 if travel_percentage>1
+
+    savings_percentage =0 if savings_percentage<0
+    savings_percentage =1 if savings_percentage>1
+
     return {
       total: this_month_expenses_total,
       travel: travel_percentage,
