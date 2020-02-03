@@ -12,9 +12,9 @@ class UserSerializer < ActiveModel::Serializer
       this_month_expenses_total += expense.amount.to_f 
     end
 
-    travel = this_month_expenses.where(category: 'travel')
-    savings = this_month_expenses.where(category: 'savings')
-    
+    travel = expenses.where(category: 'travel')
+    savings = expenses.where(category: 'savings')
+
     travel_total = 0
     travel.each do |expense|
       travel_total += expense.amount.to_f
@@ -24,11 +24,13 @@ class UserSerializer < ActiveModel::Serializer
     savings.each do |expense|
       savings_total += expense.amount.to_f
     end
+    all_savings = savings_total+travel_total
 
     this_month_expenses_total=1 if this_month_expenses_total==0
     
-    travel_percentage = travel_total/ this_month_expenses_total
-    savings_percentage = savings_total/this_month_expenses_total
+    travel_percentage = travel_total/ all_savings.to_f
+    savings_percentage = savings_total/all_savings.to_f
+
     travel_percentage =0 if travel_percentage<0
     travel_percentage =1 if travel_percentage>1
 
@@ -37,6 +39,7 @@ class UserSerializer < ActiveModel::Serializer
 
     return {
       total: this_month_expenses_total,
+      emergency: all_savings,
       travel: travel_percentage,
       savings: savings_percentage
     }
